@@ -1,3 +1,4 @@
+const Path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
@@ -12,7 +13,7 @@ module.exports = {
     './src/index.js'
   ],
   output: {
-    path: '/build',
+    path: Path.resolve('./build'),
     filename: 'bundle.js',
   },
   resolve: {
@@ -30,7 +31,7 @@ module.exports = {
           loader: 'babel-loader'
         },
          exclude: [
-          'node_modules'
+          /node_modules/
         ]
       }
     ]
