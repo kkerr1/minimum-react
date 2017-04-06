@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const DashboardPlugin = require('webpack-dashboard/plugin');
 module.exports = {
   // You may want 'eval' instead if you prefer to see the compiled output in DevTools.
   // See the discussion in https://github.com/facebookincubator/create-react-app/issues/343.
@@ -37,6 +37,7 @@ module.exports = {
   },
   
   plugins: [
+    new DashboardPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       template: 'public/index.html',
